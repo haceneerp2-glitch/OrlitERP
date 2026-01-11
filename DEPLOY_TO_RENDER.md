@@ -7,6 +7,14 @@ This guide will help you deploy your application to the cloud for free using Ren
 1.  **GitHub Account:** You need to have your code pushed to a GitHub repository.
 2.  **Render Account:** Sign up at [render.com](https://render.com).
 
+### 💻 Command to Push Code
+Open your terminal and run these 3 commands:
+```powershell
+git branch -M main
+git remote add origin https://github.com/haceneerp2-glitch/OrlitERP.git
+git push -u origin main
+```
+
 ## 🚀 Deployment Steps
 
 1.  **Log in to Render Dashboard.**
