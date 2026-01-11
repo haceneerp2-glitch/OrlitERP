@@ -3,7 +3,7 @@ services:
   - type: web
     name: orliterp-backend
     runtime: docker
-    repo: https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME] # You will update this
+    repo: https://github.com/haceneerp2-glitch/OrlitERP
     rootDir: backend
     dockerfilePath: backend/Dockerfile.prod
     plan: free
