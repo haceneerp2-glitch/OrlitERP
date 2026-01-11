@@ -1,0 +1,26 @@
+# Build Stage
+FROM node:18-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+# Pass VITE_API_URL during build or runtime? 
+# For Vite, env vars must be present at build time usually, OR we use a runtime replacement trick.
+# For simplicity with Render Blueprint, we'll try to use a Node server to serve the static files 
+# or use the "Web Service" mode which can inject env vars if we run a dev server (not recommended)
+# OR better: Use a simple serve package.
+
+# Let's stick effectively to a Node serving approach for simplicity with dynamic env vars if needed,
+# BUT effectively for Vite, we build. 
+RUN npm run build
+
+# Production Stage
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+
+EXPOSE 80
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["nginx", "-g", "daemon off;"]
