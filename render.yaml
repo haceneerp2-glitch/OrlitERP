@@ -34,7 +34,7 @@ services:
           name: orliterp-backend
           property: host
       - key: PORT
-        value: "3000"
+        value: "80"
 
 databases:
   - name: orliterp-db
