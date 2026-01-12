@@ -23,7 +23,7 @@ services:
   - type: web
     name: orliterp-frontend
     runtime: docker
-    repo: https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME] # You will update this
+    repo: https://github.com/haceneerp2-glitch/OrlitERP
     rootDir: frontend
     dockerfilePath: frontend/Dockerfile.prod
     plan: free
