@@ -5,7 +5,7 @@ services:
     runtime: docker
     repo: https://github.com/haceneerp2-glitch/OrlitERP
     rootDir: backend
-    dockerfilePath: backend/Dockerfile.prod
+    dockerfilePath: Dockerfile.prod
     plan: free
     envVars:
       - key: DATABASE_URL
@@ -25,7 +25,7 @@ services:
     runtime: docker
     repo: https://github.com/haceneerp2-glitch/OrlitERP
     rootDir: frontend
-    dockerfilePath: frontend/Dockerfile.prod
+    dockerfilePath: Dockerfile.prod
     plan: free
     envVars:
       - key: VITE_API_URL
