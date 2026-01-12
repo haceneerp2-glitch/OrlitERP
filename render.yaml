@@ -32,7 +32,7 @@ services:
         fromService:
           type: web
           name: orliterp-backend
-          property: url
+          property: host
       - key: PORT
         value: "3000"
 
