@@ -6,7 +6,7 @@ const api = axios.create({
         'Content-Type': 'application/json',
         'Bypass-Tunnel-Reminder': 'true',
     },
-    timeout: 30000, // 30 seconds timeout
+    timeout: 120000, // 2 minutes timeout for Render Free Tier cold start
 });
 
 // Add auth token to requests
